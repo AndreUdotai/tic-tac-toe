@@ -1,0 +1,75 @@
+
+#container {
+    border: 1px solid rgb(201, 201, 201);
+    box-shadow: rgb(228, 228, 228) 0px 10px 30px 5px;
+    width: 60%;
+    background-color: white;
+    margin: 10px auto;
+    border-radius: 10px;
+    height: 500px;
+}
+
+#select {
+    border: none;
+    border-bottom: 2px rgb(146, 145, 145) solid;
+    box-shadow: none;
+}
+
+button {
+    width: 20px;
+    border-radius: 10px!important;
+    background-color: white;
+    border: 1px rgb(180, 180, 180) solid; 
+}
+
+#gamePad {
+    background-color: lightgray!important;
+    height: 60%;
+}
+
+#pad {
+    display: flex!important;
+    flex-direction: column;
+    width: 100px;
+    height: 200px;
+    margin: auto;
+}
+
+#d, #e, #f, #g, #h, #i {
+    border-top: 2px black solid;
+}
+
+#a, #b, #d, #e, #g, #h {
+    border-right: 2px black solid;
+}
+
+#a, #b, #c, #d, #e, #f{
+    border-bottom: 2px black solid;
+}
+
+#b, #c, #e, #f, #h, #i {
+    border-left: 2px black solid;
+}
+
+.padRow {
+    flex: 1 1 auto;
+}
+
+.cell {
+    font-size: 30px;
+}
+
+#winner {
+    font-size: 150px;
+}
+
+#resultDisplay {
+    /* display: none; */
+    background-color: lightgray;
+    color: white;
+    position: fixed;
+    top: 130px;
+    right: 255px;
+    z-index: 9;
+    width: 60%;
+}

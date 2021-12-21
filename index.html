@@ -1,73 +1,124 @@
 <!doctype html>
 <html lang="en">
-    <head>
 
-        <script src="https://kit.fontawesome.com/a6bfa77863.js" crossorigin="anonymous"></script>
+<head>
 
-        <!-- GENERAL INFO -->
-        <title>Tic Tac Toe</title>
-        <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Play a tic tac toe game with an AI!">
+    <script src="https://kit.fontawesome.com/a6bfa77863.js" crossorigin="anonymous"></script>
 
-        <!-- Change the mobile browser's viewport width -->
-        <meta name="viewport" content="width=320" />
-        
-        <!-- Sets the viewport to the same width as the screen to obtain readable render without zooming-->
-        <meta name="viewport" content="width=device-width" />
-        
-        <!-- LINKS TO CSS FILE ("STYLESHEET") AND SITE ICON -->
-        <link href="styles.css" type="text/css" rel="stylesheet">
-        <script src="https://use.fontawesome.com/64b8cce70b.js"></script>
+    <!-- GENERAL INFO -->
+    <title>Tic Tac Toe</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Play a tic tac toe game with an AI!">
 
-        <!-- LINK TO BOOTSTRAP -->
-        <link rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"/>
+    <!-- Change the mobile browser's viewport width -->
+    <meta name="viewport" content="width=320" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-        
-        <!-- FACEBOOK METADATA -->
-        <!-- /*<meta property="og:image" content="https://dogsdogsdogs.com/images/dog.png">
+    <!-- Sets the viewport to the same width as the screen to obtain readable render without zooming-->
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- LINKS TO CSS FILE ("STYLESHEET") AND SITE ICON -->
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/64b8cce70b.js"></script>
+
+    <!-- LINK TO BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <!-- FACEBOOK METADATA -->
+    <!-- /*<meta property="og:image" content="https://dogsdogsdogs.com/images/dog.png">
         <meta property="og:description" content="Dogs are incredible creatures. There may still be some facts you don't know about them!">
         <meta property="og:title" content="10 Fun Facts About Dogs">*/ -->
-        
-        <!-- TWITTER METADATA -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Drebrary">
-        <meta name="twitter:description" content="A simple Library app">
-        <meta name="twitter:image" content="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=628&q=80">
-    </head>
-    <body>
-        <div class="row">
-            <div class="col-12 text-center mt-4">
-                <h1>TICK TAC TOE GAME APP</h1>
-                <div id="container">
-                    <div class="display">Display</div>
-                    <div class="controls">Controls</div>
-                  </div>
+
+    <!-- TWITTER METADATA -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Drebrary">
+    <meta name="twitter:description" content="A simple Library app">
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=628&q=80">
+</head>
+
+<body>
+
+    <div class="row" id="container">
+        <div class="col">
+            <div class="row w-25 mt-3" id="level">
+                <div class="col">
+                    <select class="form-control form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                        id="select">
+                        <option class="form-select" selected value="easy">Easy</option>
+                        <option class="form-select" value="medium">Medium</option>
+                        <option class="form-select" value="hard">Hard</option>
+                        <option class="form-select" value="unbeatable">Unbeatable</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="w-50 pt-1 pb-1 float-right">X</button>
+                </div>
+                <div class="col">
+                    <button class="w-50 pt-1 pb-1">O</button>
+                </div>
+            </div>
+            <div class="row mt-3 text-center" id="gamePad">
+                <div class="col"></div>
+                <div class="col" id="pad">
+                    <div class="row padRow">
+                        <div class="col cell" id="a"></div>
+                        <div class="col cell" id="b"></div>
+                        <div class="col cell" id="c"></div>
+                    </div>
+                    <div class="row padRow">
+                        <div class="col cell" id="d"></div>
+                        <div class="col cell" id="e"></div>
+                        <div class="col cell" id="f"></div>
+                    </div>
+                    <div class="row padRow">
+                        <div class="col cell" id="g"></div>
+                        <div class="col cell" id="h"></div>
+                        <div class="col cell" id="i"></div>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <h4 class="mt-4">Restart</h4>
+                </div>
             </div>
         </div>
+    </div>
 
-        
+    <div class="container-fluid" id="resultDisplay">
+        <div class="row text-center">
+            <div class="col">
+                <h2>The winner is</h2>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <p id="winner">X</p>
+            </div>
+        </div>
+    </div>
 
-        <script src="main.js" type="text/javascript"></script>
+    <script src="main.js" type="text/javascript"></script>
 
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
         </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
-    </body>
+</body>
+
 </html>
