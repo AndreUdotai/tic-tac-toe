@@ -35,36 +35,12 @@ button {
     margin: auto;
 }
 
-#d, #e, #f, #g, #h, #i {
-    border-top: 2px black solid;
-}
-
-#a, #b, #d, #e, #g, #h {
-    border-right: 2px black solid;
-}
-
-#a, #b, #c, #d, #e, #f{
-    border-bottom: 2px black solid;
-}
-
-#b, #c, #e, #f, #h, #i {
-    border-left: 2px black solid;
-}
-
-.padRow {
-    flex: 1 1 auto;
-}
-
-.cell {
-    font-size: 30px;
-}
-
 #winner {
     font-size: 150px;
 }
 
 #resultDisplay {
-    /* display: none; */
+    display: none;
     background-color: lightgray;
     color: white;
     position: fixed;
@@ -72,4 +48,19 @@ button {
     right: 255px;
     z-index: 9;
     width: 60%;
+}
+table {
+    width: 240px;
+    height: 240px;
+    margin: auto;
+}
+td {
+    border: 3px solid rgb(102, 102, 102);
+    font-size: 50px;
+    width: 80px;
+    height: 80px;
+}
+
+#gameBoard {
+    display: flex;
 }
