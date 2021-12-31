@@ -47,8 +47,8 @@ button:focus {
     display: none;
 }
 
-#resultDisplay {
-    background-color: lightgray;
+.resultDisplay {
+    background-color: rgb(158, 153, 153);
     color: white;
     position: fixed;
     top: 130px;

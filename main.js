@@ -44,6 +44,8 @@ xButton.addEventListener('click', () => {
     cyborg.choice = 'O';
     gameBoard.gameboard = ['', '', '', '', '', '', '', '', ''];
     displayController();
+    gamePlay.resultDisplay.classList.add('invisible');
+    gamePlay.drawDisplay.classList.add('invisible');
 });
 
 oButton.addEventListener('click', () => {
@@ -53,6 +55,8 @@ oButton.addEventListener('click', () => {
     cyborg.choice = 'X';
     gameBoard.gameboard = ['', '', '', '', '', '', '', '', ''];
     displayController();
+    gamePlay.resultDisplay.classList.add('invisible');
+    gamePlay.drawDisplay.classList.add('invisible');
 });
 
 let gameTable = document.getElementById('gameTable');
@@ -119,13 +123,15 @@ let gamePlay = (() => {
             //Game is over, declare winner
             let resultDisplay = document.getElementById('resultDisplay');
             resultDisplay.classList.remove('invisible');
-            console.log(tag)
             let winner = document.getElementById('winner');
             winner.innerText = tag;
+        } else if((gameBoard.gameboard.find((x) => x === '')) === undefined) {
+            let drawDisplay = document.getElementById('drawDisplay');
+            drawDisplay.classList.remove('invisible');
         }
     };
 
-    return { humanPlay, declareWinner, resultDisplay };
+    return { humanPlay, declareWinner, resultDisplay, drawDisplay };
 })();
 
 gamePlay.humanPlay();
@@ -136,15 +142,6 @@ restart.addEventListener('click', () => {
     gameBoard.gameboard = ['', '', '', '', '', '', '', '', ''];
     displayController();
     gamePlay.resultDisplay.classList.add('invisible');
+    gamePlay.drawDisplay.classList.add('invisible');
 });
 
-// 1, 2, 3          0, 1, 2
-// 4, 5, 6          3, 4, 5
-// 7, 8, 9          6, 7, 8
-
-// 1, 4, 7          0, 3, 6
-// 2, 5, 8          1, 4, 7
-// 3, 6, 9          2, 5, 8
-
-// 3, 5, 7          2, 4, 6
-// 1, 5, 9          0, 4, 8
