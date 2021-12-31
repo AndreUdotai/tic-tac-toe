@@ -19,7 +19,11 @@ button {
     width: 20px;
     border-radius: 10px!important;
     background-color: white;
-    border: 1px rgb(180, 180, 180) solid; 
+    border: 1px rgb(180, 180, 180) solid;
+}
+
+button:focus {
+    outline: none!important;
 }
 
 #gamePad {
@@ -39,8 +43,11 @@ button {
     font-size: 150px;
 }
 
-#resultDisplay {
+.invisible {
     display: none;
+}
+
+#resultDisplay {
     background-color: lightgray;
     color: white;
     position: fixed;
@@ -64,3 +71,9 @@ td {
 #gameBoard {
     display: flex;
 }
+
+.playerChoice {
+    border: 2px solid black;
+    box-shadow: rgb(126, 118, 118) 0px 3px 12px;
+}
+
