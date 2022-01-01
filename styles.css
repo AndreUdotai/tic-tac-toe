@@ -47,7 +47,7 @@ button:focus {
     display: none;
 }
 
-.resultDisplay {
+/* .resultDisplay {
     background-color: rgb(158, 153, 153);
     color: white;
     position: fixed;
@@ -55,12 +55,27 @@ button:focus {
     right: 255px;
     z-index: 9;
     width: 60%;
+} */
+
+#resultDisplay {
+    /* display: none; */
+    background-color: lightgray;
+    color: white;
+    position: fixed;
+    top: 130px;
+    right: 255px;
+    z-index: 9;
+    width: 60%;
 }
+
 table {
     width: 240px;
     height: 240px;
-    margin: auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 td {
     border: 3px solid rgb(102, 102, 102);
     font-size: 50px;
@@ -68,12 +83,15 @@ td {
     height: 80px;
 }
 
-#gameBoard {
-    display: flex;
-}
-
 .playerChoice {
     border: 2px solid black;
     box-shadow: rgb(126, 118, 118) 0px 3px 12px;
 }
 
+/* #test {
+    border: 2px solid black;
+    background-color: red;
+    margin-left: -15px;
+    margin-right: -15px;
+    height: 400px;
+} */
